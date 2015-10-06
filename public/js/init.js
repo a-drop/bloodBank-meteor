@@ -5,10 +5,12 @@
     $(".dropdown-button").dropdown();
     var $input = $('.datepicker').pickadate({
       selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15
+      selectYears: 100,
+      min: new Date(1915,1,1),
+      max: new Date()
     });
     //$input.pickadate('set', 'min', new Date(1960, 3, 20, 10, 30));
-    $input.pickadate('set', 'enable', { from: [1960,2,14], to: [2016,2,27] });
+    $input.pickadate('set', 'enable', '{ from: [1960,2,14], to: [2016,2,27] }');
 
 // Use the picker object directly.
 
