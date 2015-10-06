@@ -1,0 +1,21 @@
+/* CSS declarations go here */
+@import "scss/import/variables";
+
+@import "scss/import/init";
+/*Partials*/
+@import "scss/partials/nav_style";
+@import "scss/partials/footer_style";
+@import "scss/partials/maps";
+
+/*Pages*/
+@import "scss/page/login";
+body {
+	background-color: $body-bg;
+	color: $default-text-color;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}

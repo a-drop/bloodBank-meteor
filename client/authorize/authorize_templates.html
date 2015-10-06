@@ -1,0 +1,60 @@
+<template name='login'>
+	<div class="row"  id="login-page">
+		<div class="col s12 m6 l4 offset-m3 offset-l4">
+			<h3 class="light center">LOGIN</h3>
+
+			<button class="waves-effect waves-light btn-large login-btn" id="googlelogin">
+				<span class="fa fa-google-plus"></span>
+				<span class="text">Google Plus</span>
+			</button>
+			<button class="waves-effect waves-light btn-large login-btn" id="fblogin">
+				<span class="fa fa-facebook"></span>
+				<span class="text">facebook</span>
+			</button>
+		</div>
+	</div>
+	{{> scripts}}
+</template>
+
+<template name='register'>
+	<div class="row"  id="register-page">
+		<div class="col s12 m8 l8 offset-m2 offset-l2">
+			<h3 class="light center">REGISTER</h3>
+			<div class="card overflow-initial">
+				<div class="card-content">
+					<form action="">
+						<div class="input-field">
+							<select >
+								<option value=""  selected>Choose your blood group</option>
+								<option value="A+">A+</option>
+								<option value="A-">A-</option>
+								<option value="B+">B+</option>
+								<option value="B-">B-</option>
+							</select>
+							<label>Blood Group</label>
+						</div>
+						<div class="input-field">
+							<input type="date" class="datepicker">
+							<label>Date of Birth</label>
+						</div>
+						<div class="input-field">
+							<select >
+								<option value=""  selected>I am</option>
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+
+							</select>
+							<label>Gender</label>
+						</div>
+						<label for="pac-input">Enter Your Location</label>
+						<div id="map-container">
+							<input id="pac-input" class="controls" type="text" placeholder="Enter a location" name="location">
+					    <div id="map"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{> scripts}}
+</template>
