@@ -1,0 +1,13 @@
+<template name='bloodGroupSelector'>
+	<div class="row">
+		<div class="input-field col s12">
+			<select id="blood-group" name="blood_group" required class="blood_group">
+				<option value="" selected disabled>Choose your blood group</option>
+				{{#each bloodGroups}}
+					<option value="{{_id}}">{{title}}</option>
+				{{/each}}
+			</select>
+			<label class="">Blood Group</label>
+		</div>
+	</div>
+</template>

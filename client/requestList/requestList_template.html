@@ -1,0 +1,23 @@
+<template name='requestList'>
+	<h5>Recent Requests</h5>
+	<table class=" highlight requestList">
+	  <thead>
+	    <tr>
+	        <th data-field="id">Name</th>
+	        <th data-field="name">Blood Group</th>
+	        <th data-field="price">Status</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+			{{#each allRequests}}
+		    <tr class="">
+		      <td>{{user.profile.name}}</td>
+		      <td>{{bloodGroup.title}}</td>
+		      <td>{{status.title}}</td>
+		    </tr>
+			{{/each}}
+
+	  </tbody>
+	</table>
+</template>

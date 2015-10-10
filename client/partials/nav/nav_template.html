@@ -2,11 +2,12 @@
 
   <nav class="" id="main-nav" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <a id="logo-container" href="/" class="brand-logo">Project RED</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Make Request</a></li>
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'about'}}">About</a></li>
+        <li><a href="{{pathFor 'makeRequest'}}">Make Request</a></li>
+        <li><a href="{{pathFor 'myRequests'}}">My Requests</a></li>
         {{#if currentUser}}
           <li>
             <a class="dropdown-button" href="#!" data-activates="dropdown1">{{currentUser.profile.name}}<span class="fa fa-angle-down"></span></a>
@@ -17,9 +18,8 @@
               <li><a href="#" class="logout">Logout</a></li>
             </ul>
           </li>
-          <li><a href="#" class="logout">Logout</a></li>
         {{else}}
-          <li><a href="{{pathFor route='login'}}">Login</a></li>
+          <li><a href="{{pathFor 'login'}}">Login</a></li>
         {{/if}}
       </ul>
       <ul id="nav-mobile" class="side-nav">
@@ -29,7 +29,7 @@
 
         <li><a href="#"></a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse waves-effect btn-flat"><i class="fa fa-navicon"></i></a>
     </div>
   </nav>
 

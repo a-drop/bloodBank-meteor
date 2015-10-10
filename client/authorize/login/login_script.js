@@ -8,13 +8,18 @@ Template.login.events({
     event.preventDefault();
     Meteor.loginWithFacebook(function(err){
       if (err) {
+        console.log(err);
         console.log('Fb Login Fails');
       } else {
         console.log(' Facebook Login Success');
-        Router.go('home');
+        var currentUser = Meteor.user();
+        if(currentUser.completeRegistration) {
+          Router.go('home');
+        } else {
+          Router.go('register');
+        }
       }
     });
-
   },
   "click #googlelogin": function(event, template){
     event.preventDefault();
@@ -24,7 +29,7 @@ Template.login.events({
       } else {
         console.log('Google Login Success');
         var currentUser = Meteor.user();
-        if(currentUser.registered) {
+        if(currentUser.completeRegistration) {
           Router.go('home');
         } else {
           Router.go('register');

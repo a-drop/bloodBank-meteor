@@ -1,7 +1,10 @@
+/*Libraries*/
+@import "scss/libs/materialize";
 /* CSS declarations go here */
 @import "scss/import/variables";
 
 @import "scss/import/init";
+@import "scss/import/base";
 /*Partials*/
 @import "scss/partials/nav_style";
 @import "scss/partials/footer_style";
@@ -18,4 +21,7 @@ body {
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+.layout-card {
+	overflow: visible;
 }

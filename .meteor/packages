@@ -25,4 +25,5 @@ iron:router
 # materialize:materialize
 ejson
 fourseven:scss
-accounts-ui-unstyled
+accounts-ui
+themeteorchef:jquery-validation

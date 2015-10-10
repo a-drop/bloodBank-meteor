@@ -24,12 +24,14 @@ function initMap() {
     infowindow.close();
     marker.setVisible(false);
     place = autocomplete.getPlace();
+
     console.log(place);
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
       return;
-    }
-
+    };
+    $('.formatted_address').val(place.formatted_address);
+    $('.geometry').val(place.geometry.location);
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
