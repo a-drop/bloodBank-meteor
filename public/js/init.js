@@ -1,14 +1,14 @@
 (function($){
   $( document ).ready(function () {
-    // $('select').material_select();
-    // $('.button-collapse').sideNav();
-    // $(".dropdown-button").dropdown();
-    // var $input =
+    $('select').material_select();
+    $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 100,
+      min: new Date(1915,1,1),
+      max: new Date()
+    });
 
-    /*Validator*/
-    
 
-// Use the picker object directly.
 
 
   });

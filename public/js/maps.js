@@ -40,7 +40,7 @@ function initMap() {
       map.setZoom(17);  // Why 17? Because it looks good.
     }
     marker.setIcon(/** @type {google.maps.Icon} */({
-      url: place.icon,
+      //url: place.icon,
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(17, 34),
@@ -61,18 +61,45 @@ function initMap() {
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
   });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      infoWindow.setPosition(pos);
 
-  // Sets a listener on a radio button to change the filter type on Places
-  // Autocomplete.
-  // function setupClickListener(id, types) {
-  //   var radioButton = document.getElementById(id);
-  //   radioButton.addEventListener('click', function() {
-  //     autocomplete.setTypes(types);
-  //   });
-  // }
-  //
-  // setupClickListener('changetype-all', []);
-  // setupClickListener('changetype-address', ['address']);
-  // setupClickListener('changetype-establishment', ['establishment']);
-  // setupClickListener('changetype-geocode', ['geocode']);
+      $.getJSON( "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key=AIzaSyAjf0oot5KPQSJ4J6eqTS4qZi9Gh-4vAAI", function( data ) {
+        // console.log(data);
+        var location = '('+data.results[0].geometry.location.lat+', '+data.results[0].geometry.location.lng+')';
+        infoWindow.setContent(data.results[0].formatted_address);
+        $('.formatted_address').val(data.results[0].formatted_address);
+        $('#pac-input').val(data.results[0].formatted_address);
+        $('.geometry').val(location);
+      });
+      map.setCenter(pos);
+      // marker.setPosition(pos);
+      map.setZoom(17);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  //infoWindow.setPosition(pos);
+  // infoWindow.setContent(browserHasGeolocation ?
+  //                       'Error: The Geolocation service failed.' :
+  //                       'Error: Your browser doesn\'t support geolocation.');
+  if (browserHasGeolocation) {
+    alert('The Geolocation service failed.')
+  } else {
+    alert('Your browser doesn\'t support geolocation.')
+  }
+
 }

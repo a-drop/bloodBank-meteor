@@ -3,15 +3,29 @@
 	<div class="row" id="make-request-page">
 		<div class="col s12">
 			<h4 class="thin">Request For Donation</h4>
-			<form class="request-donation">
+			<form id="request-donation">
 
 				{{> bloodGroupSelector }}
 				<div class="row">
 	        <div class="input-field col s12">
-	          <textarea id="request-msg" class="materialize-textarea"></textarea>
-	          <label for="request-msg">Message</label>
+	          <textarea id="request_msg" name="request_msg" required class="materialize-textarea request_msg"></textarea>
+	          <label for="request_msg">Message</label>
 	        </div>
 	      </div>
+				<div class="row">
+	        <div class="input-field col s12">
+	          <input type="text" class="contact_no" required name="contact_no">
+	          <label for="">Contact No.</label>
+	        </div>
+	      </div>
+				<div class="row">
+					<div class="col s12" id="map-container">
+						<input id="pac-input" class="controls" type="text" placeholder="Enter a location" name="location" required>
+						<div id="map"></div>
+						<input type="hidden" name="formatted_address" class="formatted_address" >
+						<input type="hidden" name="geometry" class="geometry">
+					</div>
+				</div>
 				<div class="row">
 					<div class="col s12 right-align">
 						<button class="waves-effect waves-light btn red">Cancel</button>
@@ -21,4 +35,5 @@
 			</form>
 		</div>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjf0oot5KPQSJ4J6eqTS4qZi9Gh-4vAAI&signed_in=true&libraries=places&callback=initMap" async defer></script>
 </template>

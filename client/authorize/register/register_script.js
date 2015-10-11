@@ -49,7 +49,7 @@ Template.register.onRendered(function(){
     min: new Date(1915,1,1),
     max: new Date()
   });
-  jQuery.validator.setDefaults({
+  $.validator.setDefaults({
       errorElement: 'div',
       errorClass: 'validation-error invalid',
   });

@@ -1,5 +1,5 @@
 <template name='requestList'>
-	<h5>Recent Requests</h5>
+	<h5 class="thin">Recent Requests</h5>
 	<table class=" highlight requestList">
 	  <thead>
 	    <tr>
@@ -13,7 +13,7 @@
 			{{#each allRequests}}
 		    <tr class="">
 		      <td>{{user.profile.name}}</td>
-		      <td>{{bloodGroup.title}}</td>
+		      <td>{{blood_group.title}}</td>
 		      <td>{{status.title}}</td>
 		    </tr>
 			{{/each}}
