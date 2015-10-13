@@ -31,7 +31,8 @@ function initMap() {
       return;
     };
     $('.formatted_address').val(place.formatted_address);
-    $('.geometry').val(place.geometry.location);
+    $('.geometry-lat').val(place.geometry.location.J);
+    $('.geometry-lng').val(place.geometry.location.M);
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
@@ -73,11 +74,12 @@ function initMap() {
 
       $.getJSON( "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key=AIzaSyAjf0oot5KPQSJ4J6eqTS4qZi9Gh-4vAAI", function( data ) {
         // console.log(data);
-        var location = '('+data.results[0].geometry.location.lat+', '+data.results[0].geometry.location.lng+')';
+        //var location = '('+data.results[0].geometry.location.lat+', '+data.results[0].geometry.location.lng+')';
         infoWindow.setContent(data.results[0].formatted_address);
         $('.formatted_address').val(data.results[0].formatted_address);
         $('#pac-input').val(data.results[0].formatted_address);
-        $('.geometry').val(location);
+        $('.geometry-lat').val(data.results[0].geometry.location.lat);
+        $('.geometry-lng').val(data.results[0].geometry.location.lng);
       });
       map.setCenter(pos);
       // marker.setPosition(pos);
@@ -102,4 +104,19 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     alert('Your browser doesn\'t support geolocation.')
   }
 
+}
+
+function staticMap(lat, lng) {
+  lat = parseFloat(lat);
+  lng = parseFloat(lng);
+  var myLatlng = new google.maps.LatLng(lat, lng);
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: lat, lng: lng},
+    zoom: 16
+  });
+  var marker = new google.maps.Marker({
+    position: myLatlng
+    //title: address
+  });
+  marker.setMap(map);
 }

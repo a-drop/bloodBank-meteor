@@ -23,7 +23,8 @@
 						<input id="pac-input" class="controls" type="text" placeholder="Enter a location" name="location" required>
 						<div id="map"></div>
 						<input type="hidden" name="formatted_address" class="formatted_address" >
-						<input type="hidden" name="geometry" class="geometry">
+						<input type="hidden" name="geometry-lat" class="geometry-lat">
+						<input type="hidden" name="geometry-lng" class="geometry-lng">
 					</div>
 				</div>
 				<div class="row">
@@ -35,5 +36,5 @@
 			</form>
 		</div>
 	</div>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjf0oot5KPQSJ4J6eqTS4qZi9Gh-4vAAI&signed_in=true&libraries=places&callback=initMap" async defer></script>
+
 </template>

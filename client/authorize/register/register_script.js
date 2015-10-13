@@ -42,6 +42,7 @@ Template.register.onCreated(function(){
 });
 
 Template.register.onRendered(function(){
+  initMap();
   $('select').material_select();
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -64,7 +65,8 @@ Template.register.onRendered(function(){
       var dob = $('[name=dob]').val();
       var gender = $('[name=gender]').val();
       var formatted_address = $('[name=formatted_address]').val();
-      var geometry = $('[name=geometry]').val();
+      var geometry_lat = $('[name=geometry-lat]').val();
+      var geometry_lng = $('[name=geometry-lng]').val();
 
       var userData = {
         first_name: first_name,
@@ -75,8 +77,11 @@ Template.register.onRendered(function(){
         dob: dob,
         gender: gender,
         formatted_address: formatted_address,
-        geometry: geometry,
-        name: first_name+' '+last_name
+        name: first_name+' '+last_name,
+        geometry: {
+          lat: geometry_lat,
+          lng: geometry_lng
+        }
       }
       Meteor.call("completeRegistration", userData, function(error, result){
         if(error){

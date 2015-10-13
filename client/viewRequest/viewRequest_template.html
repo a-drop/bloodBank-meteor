@@ -1,0 +1,54 @@
+<template name='viewRequest'>
+	<div class="row">
+		<div class="col s12">
+			<h3>{{blood_group.title}}</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<h5><label for="">User Name</label><div>{{user.profile.name}}</div></h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<p><label for="">Message </label><div>{{message}}</div></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<p><label for="">Contact No. </label><div>{{contact_no}}</div></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<p><label for="">Address </label> <div>{{address}}</div></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12" id="map-container">
+			<div id="map"></div>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 right-align">
+			<button class="waves-effect waves-light btn red">Cancel</button>
+			<button type="submit" class="register waves-effect waves-light btn modal-trigger" href="#donate-agriment">Donate</button>
+		</div>
+	</div>
+	<script charset="utf-8">
+		staticMap({{geometry.lat}}, {{geometry.lng}});
+	</script>
+
+  <!-- Modal Structure -->
+  <div id="donate-agriment" class="modal">
+    <div class="modal-content">
+      <h4>Donation Agriment</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum eveniet rem eligendi quod, architecto temporibus expedita optio minima facere recusandae praesentium suscipit facilis ducimus eius commodi blanditiis ad impedit dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nostrum sunt, quis commodi iste dolorem possimus. Minima quisquam, modi explicabo tempore, adipisci dolore esse, error praesentium optio consectetur similique dolorem.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="" id="i-agree-to-share" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+			<a href="" id="i-disagree-to-share" class=" modal-action modal-close waves-effect waves-green btn-flat">DisAgree</a>
+    </div>
+  </div>
+</template>

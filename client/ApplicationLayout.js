@@ -22,6 +22,6 @@ Template.ApplicationLayout.onCreated(function () {
 	});
 })
 Template.ApplicationLayout.onRendered(function(){
-	
+	document.title = 'Project Red APP';
 
 });

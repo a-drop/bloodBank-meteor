@@ -20,3 +20,12 @@ div.validation-error {
 	}
 
 }
+.link{
+	cursor: pointer;
+}
+
+.page-container {
+	@media screen and (min-width: 993px){
+		min-height: calc(100vh - 336px);
+	}
+}

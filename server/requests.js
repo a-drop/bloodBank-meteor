@@ -12,7 +12,10 @@ Meteor.methods({
 				contact_no:data.contact_no,
 				message: data.message,
 				address: data.formatted_address,
-				geometry: data.geometry,
+				geometry: {
+					lat: data.geometry.lat,
+					lng: data.geometry.lng
+				},
 				status: Statuses.findOne({title: 'waiting'})._id,
 				timeStamp: {
 					createdAt: new Date()
@@ -22,6 +25,12 @@ Meteor.methods({
 		} else {
 			console.log('Your not logged in, please login to request a donation');
 		}
-
+	},
+	agreeToDonate: function (id) {
+		if(currentUser = Meteor.userId()){
+			Requests.update({_id: id}, {$push: {doner_request: {id: id, createdAt: new Date()}}});
+		} else {
+			console.log('Your not logged in, please login to request a donation');
+		}
 	}
 });

@@ -5,8 +5,7 @@
       <a id="logo-container" href="/" class="brand-logo">Project RED</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'about'}}">About</a></li>
-        <li><a href="{{pathFor 'makeRequest'}}">Make Request</a></li>
+        <li><a href="{{pathFor 'makeRequest'}}">Make a Request</a></li>
         <li><a href="{{pathFor 'myRequests'}}">My Requests</a></li>
         {{#if currentUser}}
           <li>
@@ -21,10 +20,10 @@
         {{else}}
           <li><a href="{{pathFor 'login'}}">Login</a></li>
         {{/if}}
+        <li><a href="#" class="logout">Logout</a></li>
       </ul>
       <ul id="nav-mobile" class="side-nav">
         <li><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'about'}}">About</a></li>
         <li><a href="{{pathFor 'makeRequest'}}">Make Request</a></li>
         <li><a href="{{pathFor 'myRequests'}}">My Requests</a></li>
         {{#if currentUser}}
@@ -40,6 +39,7 @@
         {{else}}
           <li><a href="{{pathFor 'login'}}">Login</a></li>
         {{/if}}
+        <li><a href="#" class="logout">Logout</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse waves-effect btn-flat"><i class="fa fa-navicon"></i></a>
     </div>
