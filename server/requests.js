@@ -28,7 +28,7 @@ Meteor.methods({
 	},
 	agreeToDonate: function (id) {
 		if(currentUser = Meteor.userId()){
-			Requests.update({_id: id}, {$push: {doner_request: {id: id, createdAt: new Date()}}});
+			Requests.update({_id: id}, {$push: {doner_request: {id: id, createdAt: new Timestamp()}}});
 		} else {
 			console.log('Your not logged in, please login to request a donation');
 		}

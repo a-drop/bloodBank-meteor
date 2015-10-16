@@ -27,3 +27,5 @@ ejson
 fourseven:scss
 accounts-ui
 themeteorchef:jquery-validation
+momentjs:moment
+alethes:pages

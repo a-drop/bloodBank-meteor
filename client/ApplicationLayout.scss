@@ -5,6 +5,7 @@
 
 @import "scss/import/init";
 @import "scss/import/base";
+
 /*Partials*/
 @import "scss/partials/nav_style";
 @import "scss/partials/footer_style";
@@ -12,6 +13,8 @@
 
 /*Pages*/
 @import "scss/page/login";
+
+@import "scss/import/requestList";
 body {
 	background-color: $body-bg;
 	color: $default-text-color;

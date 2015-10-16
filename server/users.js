@@ -1,4 +1,4 @@
-Meteor.publish("userData", function () {
+Meteor.publish("thisUser", function () {
   if (this.userId) {
     return Meteor.users.find({_id: this.userId},
                               {fields: {
@@ -13,13 +13,21 @@ Meteor.publish("userData", function () {
 																'services.facebook.id': 1,
 																'services.facebook.first_name': 1,
 																'services.facebook.last_name': 1,
-
+                                'profile': 1,
                                 'completeRegistration': 1,
 
 															}});
   } else {
     this.ready();
   }
+});
+Meteor.publish("allUser", function () {
+  return Meteor.users.find({}, {
+    fields: {
+      'profile': 1,
+      'completeRegistration': 1,
+    }
+  });
 });
 
 Meteor.methods({
