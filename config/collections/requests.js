@@ -1,5 +1,3 @@
-BloodGroups = new Meteor.Collection('bloodGroups');/*Blood Groups*/
-
 Requests = new Meteor.Collection('requests', {
 	transform: function(doc) {
 		doc.user_name = Meteor.users.findOne({_id: doc.user}).profile.name;
@@ -8,5 +6,3 @@ Requests = new Meteor.Collection('requests', {
 		return doc;
 	}
 }); /*Requests for Blood*/
-
-Statuses = new Meteor.Collection('statuses'); /*Request Statuses*/

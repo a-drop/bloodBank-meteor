@@ -19,6 +19,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 # autopublish             # Publish all data to the clients (for prototyping)
 # insecure                # Allow all DB writes from clients (for prototyping)
 accounts-base
+accounts-password
 accounts-facebook
 accounts-google
 iron:router
@@ -29,3 +30,11 @@ accounts-ui
 themeteorchef:jquery-validation
 momentjs:moment
 alethes:pages
+
+# Packages for admin Page
+# dburles:collection-helpers
+# aldeed:collection2
+# alanning:roles
+fortawesome:fontawesome
+# twbs:bootstrap
+# yogiben:admin

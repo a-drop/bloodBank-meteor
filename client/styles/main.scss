@@ -1,0 +1,30 @@
+/*Libraries*/
+@import "libs/materialize";
+/* CSS declarations go here */
+@import "import/variables";
+
+@import "import/init";
+@import "import/base";
+
+/*Partials*/
+@import "partials/nav_style";
+@import "partials/footer_style";
+@import "partials/maps";
+
+/*Pages*/
+@import "page/login";
+
+@import "import/requestList";
+body {
+	background-color: $body-bg;
+	color: $default-text-color;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+.layout-card {
+	overflow: visible;
+}
