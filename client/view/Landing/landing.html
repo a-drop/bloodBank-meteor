@@ -1,6 +1,18 @@
 <template name="landing">
   <!-- {{> allRequestList }} -->
-  {{> pages}}
+  <table class=" highlight requestList">
+    <thead>
+      <tr>
+          <th data-field="name">Name</th>
+          <th data-field="bloodGroup">Blood Group</th>
+          <th data-field="status">Status</th>
+          <th data-field="createdAT">Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{> pages}}
+    </tbody>
+  </table>
   {{> pagesNav}}
 
   {{> floatButton }}

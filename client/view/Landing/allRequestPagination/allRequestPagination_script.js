@@ -1,14 +1,16 @@
-Template.myRequestPagination.helpers({
+Template.allRequestPagination.helpers({
 	createdAt: function () {
+		console.log(this);
 		return moment(this.timeStamp.createdAt).fromNow();
 	}
 });
 
-Template.myRequestPagination.events({
+Template.allRequestPagination.events({
 	"click .req_link": function () {
 		Router.go('viewRequest', {_id: this._id});
 	}
 });
 
-Template.myRequestPagination.onRendered(function ( ){
-	})
+Template.allRequestPagination.onRendered(function ( ){
+
+});

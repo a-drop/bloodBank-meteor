@@ -1,6 +1,16 @@
 
-Meteor.publish("requests", function(){
+Meteor.publish("allRequests", function(){
 	return Requests.find();
+});
+
+
+Meteor.publish("myRequests", function(){
+	var currrentUser = this.userId;
+	if (currrentUser) {
+		return Requests.find({user: currrentUser});
+	} else {
+		return [];
+	}
 });
 
 Meteor.methods({

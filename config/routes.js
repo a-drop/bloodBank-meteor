@@ -1,7 +1,8 @@
 Router.onBeforeAction("loading");
 Router.route('/', {
   template: 'landing',
-  name: 'home',
+  name: 'home'
+
 });
 
 /*Authorizations*/
@@ -24,7 +25,9 @@ Router.route("makeRequest", {
 
 });
 Router.route("about", {});
-Router.route("myRequests", {});
+Router.route("myRequests", {
+  name: "myRequests"
+});
 Router.route("/request/:_id", {
   name:"viewRequest",
   template:"viewRequest",
