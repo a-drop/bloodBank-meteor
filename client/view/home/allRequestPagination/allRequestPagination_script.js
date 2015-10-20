@@ -1,6 +1,5 @@
 Template.allRequestPagination.helpers({
 	createdAt: function () {
-		console.log(this);
 		return moment(this.timeStamp.createdAt).fromNow();
 	}
 });
@@ -12,5 +11,8 @@ Template.allRequestPagination.events({
 });
 
 Template.allRequestPagination.onRendered(function ( ){
-
+	self = this;
+	/*this.autorun(function(){
+		self.$('.createdAt').val(moment(self.timeStamp.createdAt).fromNow());
+	});*/
 });

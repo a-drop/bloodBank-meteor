@@ -1,12 +1,18 @@
 Router.onBeforeAction("loading");
 Router.route('/', {
-  template: 'landing',
+  template: 'home',
   name: 'home'
 
 });
-
+// Router.route('/landing', {
+//   template: 'landing',
+//   name: 'landing',
+//   layoutTemplate: ''
+//
+// });
 /*Authorizations*/
 Router.route('/login', {
+  name: 'login',
   layoutTemplate: ''
 });
 Router.route('/register', {
@@ -22,6 +28,9 @@ Router.route('/register', {
   layoutTemplate: ''
 });
 Router.route("makeRequest", {
+
+});
+Router.route("myDonations", {
 
 });
 Router.route("about", {});

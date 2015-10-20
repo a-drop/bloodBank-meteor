@@ -3,8 +3,13 @@ Template.nav.helpers({
 
 
 Template.nav.onRendered(function(){
-	$('.button-collapse').sideNav();
-	$(".dropdown-button").dropdown();
+	self = this;
+	this.autorun(function(){
+		if(Meteor.userId()) {
+		 	self.$(".dropdown-button").dropdown();
+		}
+		self.$('.button-collapse').sideNav();
+	});
 });
 
 
